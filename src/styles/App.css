@@ -1,0 +1,8 @@
+.dark-mode{
+  --background-color-primary: #25282D;;
+    --background-color-secondary: #161819;
+    --text-color-primary: #000000;
+    --text-color-secondary: #ffffff;
+    --background-input-color: #25282D;
+    --box-shadow: 0 2px 4px rgba(255, 255, 255, 0.2);
+}

@@ -1,0 +1,14 @@
+:root {
+    --background-color-primary: #f5f5f5;
+    --background-color-secondary: #f9f9f9;
+    --tex-color-primary: #ffffff;
+    --text-color-secondary: #000000;
+    --text-color-default: #ffffff;
+    --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    --background-input-color: #eee;
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
