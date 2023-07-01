@@ -1,0 +1,111 @@
+.header{
+    width: 100%;
+    padding: 1rem;
+    position: relative;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: var(--background-color-primary);
+}
+.header__nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.header__logo{
+    display: flex;
+    font-family: 'Montserrat';
+    font-weight: 500;
+}
+.header__logo-icono, .header__logo-titulo{
+    padding: .3rem;
+}
+.header__logo-titulo{
+    font-size: 1.2rem;
+}
+.header__logo-icono{
+    width: 35px;
+}
+.header__menu{
+    position: fixed;
+    background-color:var(--background-color-primary);
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 2;
+    display: flex;
+    transform: translateX(-100%);
+    transition: .5s ease all;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    will-change: transform;
+}
+.header__menu.open{
+    transform: translate(0);
+}
+.header__menu-element{
+    padding: 1.5rem;
+    list-style: none;
+}
+.header__menu-link{
+    text-decoration: none;
+    color: var(--text-color-secondary);
+    opacity: .8;
+    font-family: 'Montserrat';
+    font-weight: 500;
+}
+.header__toogle{
+    display: flex;
+    flex-direction: column;
+}
+.header__toogle span{
+    width: 30px;
+    height: 4px;
+    background-color: var(--text-color-secondary);
+    border-radius: 0.1rem;
+    margin-bottom: 0.4rem;
+    transform-origin: 5px 0;
+    transition: all .2s linear;
+    z-index: 3;
+}
+.header__toogle.open > span{
+    transform: rotate(45deg) translate(0px, 0px);
+}
+.header__toogle.open > span:nth-child(2){
+    display: none;
+}
+.header__toogle.open > span:nth-child(3){
+    transform: rotate(-45deg) translate(-5px, 1px);
+}
+@media (min-width:744px){
+    .header__menu-link{
+        font-size: 1.2rem;
+    }
+}
+@media (min-width:996px){
+    .header__menu {
+        transition: none;
+        flex-direction: row;
+        z-index: 0;
+        /* opacity: 1;
+        visibility: visible; */
+        transform: none;
+        position: sticky;
+        
+      }
+
+    /* .header__menu.open {
+        opacity: 0;
+        visibility: hidden;
+      } */
+
+    .header__menu-link{
+        font-size: 1rem;
+    }
+    .header__toogle{
+        display: none;
+    }
+}
