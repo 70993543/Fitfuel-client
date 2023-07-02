@@ -1,6 +1,6 @@
 .oferta__section{
     width: 100%;
-    padding: 1rem;
+    padding: 2rem 1rem;
     font-family: 'Montserrat';
     background-color: var(--background-color-primary);
 }
@@ -57,6 +57,9 @@
     }
 }
 @media (min-width: 744px){
+    .oferta__section{
+        padding: 3rem 1rem;
+    }
     .oferta__time-box{
         display: flex;
         justify-content: center;
@@ -73,6 +76,12 @@
     }
 }
 @media (min-width: 996px){
+    .oferta__section{
+        padding: 4rem 1rem;
+    }
+    .oferta__titulo{
+        font-size: 2rem;
+    }
     .oferta__time-box{
         width: 150px;
         height: 150px;
