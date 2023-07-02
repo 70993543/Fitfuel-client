@@ -1,0 +1,137 @@
+.descripcion-servicio{
+    padding: 1.2rem;
+    width: 100%;
+    display: grid;
+    font-family: 'Montserrat';
+    background-color: var(--background-color-secondary);
+}
+.descripcion-servicio__wrapper{
+    display: grid;
+    
+}
+.descripcion-servicio__contenedor{
+    margin-bottom: 1rem;
+}
+.descripcion-servicio__titulo{
+    text-align: center;
+    font-weight: 500;
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+}
+.descripcion-servicio__parrafo{
+    font-family: 'Poppins';
+    line-height: 25px;
+    margin-bottom: 1rem;
+    text-align: justify;
+    font-size: 0.8rem;
+}
+.descripcion-servicio__item{
+    margin-bottom: 1rem;
+    position: relative;
+    list-style: none;
+}
+.descripcion-servicio__item::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgb(30, 73, 71)
+}
+
+.descripcion-servicio__item span{
+    display: inline-block;
+    margin-left: 15px;
+    font-family: 'Poppins';
+}
+
+.descripcion-servicio__item > .fas{
+    font-size: 2.4rem;
+    margin-bottom: 0.8rem;
+    text-align: center;
+    color: rgb(30, 73, 71)
+}
+
+.descripcion-servicio__lista{
+    font-size: 0.8rem;
+    line-height: 20px;
+    font-family: 'Poppins';
+    text-align: justify;
+}
+.descripcion-servicio__imagen-nutricionista{
+    position: relative;
+    margin-bottom: 2rem;
+}
+.descripcion-servicio__imagen{
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.boton{
+    padding: .8rem 2rem;
+    text-decoration: none;
+    color: var(--text-color-default);
+    background-color: rgb(30, 73, 71);
+    border-radius: 5px;
+}
+@media (min-width: 744px){
+    .descripcion-servicio{
+        padding: 3rem;
+        opacity: .8;
+    }
+    .descripcion-servicio__titulo{
+        text-align: start;
+        font-size: 1.6rem;
+       
+    }
+}
+@media (min-width: 996px){
+    
+    .descripcion-servicio__titulo{
+        text-align: start;
+        font-size: 2rem;
+    }
+    .descripcion-servicio__wrapper{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+    .descripcion-servicio__btn{
+        display: none;
+    }
+    .descripcion-servicio__imagen{
+      transition: opacity 0.3s ease;
+    }
+    .descripcion-servicio__imagen:hover{
+        opacity: 0.7;
+    }
+    .descripcion-servicio__overlay{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: opacity .3s ease;
+    }
+    .descripcion-servicio__imagen-nutricionista:hover .descripcion-servicio__overlay {
+        opacity: 1;
+      }
+}
+@media (min-width: 1400px){
+    .descripcion-servicio{
+        padding: 3rem 6rem;
+    }
+    .descripcion-servicio__wrapper{
+        gap: 3rem;
+    }
+    
+}
