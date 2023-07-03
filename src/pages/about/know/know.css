@@ -1,0 +1,59 @@
+.conocenos{
+    background: linear-gradient(45deg, rgba(78, 143, 88, 0.748), rgba(0, 0, 255, 0.707)), url('https://images.pexels.com/photos/3760093/pexels-photo-3760093.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+    width: 100%;
+    height: 350px;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.conocenos__contenido{
+    position: absolute;
+    width: 70%;
+    font-family: 'Montserrat';
+    color: var(--text-color-default);
+    opacity: .8;
+    line-height: 2.6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.conocenos__contenido > span{
+    width: 30px;
+    height: 4px;
+    background-color: #4bd7a4;
+    position: absolute;
+}
+.conocenos__contenido-titulo{
+    margin-bottom: .5rem;
+    text-align: center;
+    margin-top: .6rem;
+}
+.conocenos__contenido-parrafo{
+    font-family: 'Poppins';
+    line-height: 1.5rem;
+    text-align: center;
+}
+@media (min-width: 744px){
+    .conocenos{
+        height: 400px;
+    }
+}
+@media (min-width: 996px){
+    .conocenos{
+        height: 450px;
+    }
+}
+@media (min-width: 1200px){
+    .conocenos{
+        height: 70vh;
+       
+    }
+}
+@media (min-width: 1400px){
+    .conocenos{
+        height: 80vh;
+    }
+}

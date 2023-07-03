@@ -26,7 +26,7 @@ const Navbar = () => {
                     <NavLink to="/" className="header__menu-link">Service</NavLink>
                 </li>
                 <li className="header__menu-element" onClick={closeMenu}>
-                    <NavLink to="/" className="header__menu-link">About Us</NavLink>
+                    <NavLink to="/about" className="header__menu-link">About Us</NavLink>
                 </li>
                 <li className="header__menu-element" onClick={closeMenu}>
                     <NavLink to="/" className="header__menu-link">Contact</NavLink>
