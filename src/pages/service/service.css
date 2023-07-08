@@ -1,0 +1,182 @@
+.service{
+    display: grid;
+    font-family: 'Montserrat';
+    padding-top: 2rem;
+    padding-left: .5rem;
+    padding-right: .5rem;
+    background-color: var(--background-color-secondary);
+}
+.service__options{
+    width: 100%;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 2rem;
+}
+.service__select {
+    font-family: 'Montserrat';
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    /* border: 1px solid #ccc; */
+    border-radius: 4px;
+    background-color: #eee;
+    color: #555;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease;
+    margin-bottom: 1rem;
+    border: none;
+    
+  }
+  
+  .service__select:focus {
+    outline: none;
+    border-color: #3B5A6D;
+  }
+  .service__select > option {
+    font-family: 'Poppins';
+    font-size: 1rem;
+    color: #555;
+    border: none;
+  }
+  
+  
+  .service__search {
+    display: flex;
+    align-items: center;
+    background-color: #eee;
+    /* border: 1px solid #ccc; */
+    border-radius: 4px;
+    padding: 0.2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: none;
+  }
+  
+  .service__search-input {
+    flex: 1;
+    border: none;
+    font-family: 'Montserrat';
+    font-size: 1rem;
+    padding: 0.3rem;
+    outline: none;
+    width: 200px;
+    background-color: #eee;
+  }
+  
+  .service__search-icon {
+    color: #555;
+    margin-right: 0.5rem;
+  }
+.service__columns{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* place-items: center; */
+    justify-items: center;
+    align-items: center;
+}
+.service__column{
+    margin-bottom: 2rem;
+}
+.service__card{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background-color-primary);
+    max-width: 250px;
+    border-radius: 10px;
+
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Agrega una sombra elegante */
+    transition: box-shadow 0.3s ease; /* Añade una transición suave */
+}
+.service__card-image{
+    margin-bottom: .5rem;
+    
+}
+.service__card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Cambia la sombra al pasar el cursor sobre la tarjeta */
+  }
+.service-image{
+    width: 100%;
+    object-fit: cover;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    height: 270px;
+    opacity: .9;
+    min-width: 250px;
+    object-position: center center;
+    filter: brightness(70%) contrast(120%);
+    transition: filter .3s ease;
+}
+/* .service__card-image:hover .service-image{
+    filter: none;
+} */
+.service__content{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: .7rem 1rem;
+}
+.service__content-title{
+    font-size: 1.2rem;
+    margin-bottom: .4rem;
+    text-align: center;
+    font-weight: 500;
+}
+
+.service__content-box{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: .5rem;
+}
+.service__content-objective {
+    font-size: 0.9rem;
+    color: #555;
+    font-family: 'Poppins';
+  }
+.service__content-badge {
+    font-size: 0.8rem;
+    background-color: #eee;
+    padding: 0.5rem;
+    border-radius: 20px;
+    opacity: 0.8;
+    display: inline-block;
+    color: #333;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .service__content-badge:hover {
+    transform: scale(1.05);
+  }
+  .servicio__content-btn {
+    padding: 0.8rem 1.2rem;
+    background-color: #3B5A6D;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: 'Poppins';
+  }
+  
+  .servicio__content-btn:hover {
+    background-color: #2B3E4C;
+  }
+  
+  @media(min-width: 618px){
+    .service__options{
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    .service__select{
+        margin-bottom: 0;
+        margin-right: 2rem;
+    }
+  }
