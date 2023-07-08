@@ -23,7 +23,7 @@ const Navbar = () => {
                     <NavLink to="/" className="header__menu-link">Home</NavLink>
                 </li>
                 <li className="header__menu-element" onClick={closeMenu}>
-                    <NavLink to="/" className="header__menu-link">Service</NavLink>
+                    <NavLink to="/service" className="header__menu-link">Service</NavLink>
                 </li>
                 <li className="header__menu-element" onClick={closeMenu}>
                     <NavLink to="/about" className="header__menu-link">About Us</NavLink>
