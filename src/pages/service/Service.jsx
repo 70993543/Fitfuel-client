@@ -1,10 +1,38 @@
-import React from 'react'
-import './service.css'
+import React, { useEffect, useState } from 'react';
+import './service.css';
+import axios from 'axios';
 
 const Service = () => {
+  const [data, setData] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [filteredData, setFilteredData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('http://localhost:8080/api/v1/nutricionista/list');
+        setData(response.data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    filterData();
+  }, [searchTerm]);
+
+  const filterData = () => {
+    const filtered = data.filter((item) =>
+      item.nombre.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    setFilteredData(filtered);
+  };
+
   return (
     <section className="service">
-        <div className="service__options">
+      <div className="service__options">
         <select className="service__select">
           <option value="">Seleccione una opción</option>
           <option value="bajar-peso">Bajar de peso</option>
@@ -14,94 +42,64 @@ const Service = () => {
           <option value="masa-muscular">Masa muscular</option>
         </select>
         <div className="service__search">
-          <input type="text" className="service__search-input" placeholder="Buscar..." />
-          <i className='fas fa-search service__search-icon'></i>
+          <input
+            type="text"
+            className="service__search-input"
+            placeholder="Buscar..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+          <i className="fas fa-search service__search-icon"></i>
         </div>
       </div>
-        <div className="service__columns">
-        <div className="service__column">
-            <div className="service__card">
+      <div className="service__columns">
+        {searchTerm.trim() === '' ? (
+          data.map((item) => (
+            <div className="service__column" key={item.id}>
+              <div className="service__card">
                 <div className="service__card-image">
-                    <img src="https://images.pexels.com/photos/16999877/pexels-photo-16999877/free-photo-of-gente-mujer-relajacion-conexion.jpeg" alt="" className='service-image' />
+                  <img src={item.imagen} alt="" className="service-image" />
                 </div>
                 <div className="service__content">
-                    <h2 className="service__content-title">
-                        Carlos Perez
-                    </h2>
-                    <div className="service__content-box"
-                    >
-                        <span className='service__content-badge'>Objetivo</span>
-                        <p className="service__content-objective">
-                        Bajar de peso
+                  <h2 className="service__content-title">{item.nombre}</h2>
+                  <div className="service__content-box">
+                    <span className="service__content-badge">Objetivo</span>
+                    <p className="service__content-objective">
+                      {item.objetivo?.nombre || 'Sin objetivo'}
                     </p>
-                    </div>
-                    <button className='servicio__content-btn'>Ver detalle</button>
+                  </div>
+                  <button className="servicio__content-btn">Ver detalle</button>
                 </div>
+              </div>
             </div>
-        </div>
-        <div className="service__column">
-            <div className="service__card">
+          ))
+        ) : filteredData.length > 0 ? (
+          filteredData.map((item) => (
+            <div className="service__column" key={item.id}>
+              <div className="service__card">
                 <div className="service__card-image">
-                    <img src="https://images.pexels.com/photos/2726111/pexels-photo-2726111.jpeg" alt="" className='service-image' />
+                  <img src={item.imagen} alt="" className="service-image" />
                 </div>
                 <div className="service__content">
-                    <h2 className="service__content-title">
-                        Carlos Perez
-                    </h2>
-                    <div className="service__content-box"
-                    >
-                        <span className='service__content-badge'>Objetivo</span>
-                        <p className="service__content-objective">
-                        Bajar de peso
+                  <h2 className="service__content-title">{item.nombre}</h2>
+                  <div className="service__content-box">
+                    <span className="service__content-badge">Objetivo</span>
+                    <p className="service__content-objective">
+                      {item.objetivo?.nombre || 'Sin objetivo'}
                     </p>
-                    </div>
-                    <button className='servicio__content-btn'>Ver detalle</button>
+                  </div>
+                  <button className="servicio__content-btn">Ver detalle</button>
                 </div>
+              </div>
             </div>
-        </div>
-        <div className="service__column">
-            <div className="service__card">
-                <div className="service__card-image">
-                    <img src="https://images.pexels.com/photos/1040880/pexels-photo-1040880.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" className='service-image' />
-                </div>
-                <div className="service__content">
-                    <h2 className="service__content-title">
-                        Carlos Perez
-                    </h2>
-                    <div className="service__content-box"
-                    >
-                        <span className='service__content-badge'>Objetivo</span>
-                        <p className="service__content-objective">
-                        Bajar de peso
-                    </p>
-                    </div>
-                    <button className='servicio__content-btn'>Ver detalle</button>
-                </div>
-            </div>
-        </div>
-        <div className="service__column">
-            <div className="service__card">
-                <div className="service__card-image">
-                    <img src="https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" className='service-image' />
-                </div>
-                <div className="service__content">
-                    <h2 className="service__content-title">
-                        Carlos Perez
-                    </h2>
-                    <div className="service__content-box"
-                    >
-                        <span className='service__content-badge'>Objetivo</span>
-                        <p className="service__content-objective">
-                        Bajar de peso
-                    </p>
-                    </div>
-                    <button className='servicio__content-btn'>Ver detalle</button>
-                </div>
-            </div>
-        </div>
-        </div>
+          ))
+        ) : (
+          <p>No se encontraron resultados</p>
+        )}
+      </div>
     </section>
-  )
-}
 
-export {Service}
+  );
+        };
+
+export {Service};
