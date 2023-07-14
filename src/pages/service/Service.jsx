@@ -1,13 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import './service.css';
 import axios from 'axios';
+import { Preloader } from '../../components/preloader/Preloader';
 
 const Service = () => {
   const [data, setData] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [filteredData, setFilteredData] = useState([]);
+  const [loading, setLoading] = useState(true)
+
+useEffect(()=> {
+    setTimeout(()=>{
+        setLoading(false);
+    }, 1000);
+}, [])
 
   useEffect(() => {
+
     const fetchData = async () => {
       try {
         const response = await axios.get('http://localhost:8080/api/v1/nutricionista/list');
@@ -31,7 +40,12 @@ const Service = () => {
   };
 
   return (
-    <section className="service">
+    <main>
+        {loading ? (
+            <Preloader></Preloader>
+        ):(
+            <div>
+                <section className="service">
       <div className="service__options">
         <select className="service__select">
           <option value="">Seleccione una opción</option>
@@ -98,6 +112,9 @@ const Service = () => {
         )}
       </div>
     </section>
+            </div>
+        )}
+    </main>
 
   );
         };
