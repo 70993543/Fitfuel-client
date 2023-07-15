@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './service.css';
 import axios from 'axios';
 import { Preloader } from '../../components/preloader/Preloader';
+import { Link } from 'react-router-dom';
 
 const Service = () => {
   const [data, setData] = useState([]);
@@ -39,6 +40,7 @@ useEffect(()=> {
     setFilteredData(filtered);
   };
 
+
   return (
     <main>
         {loading ? (
@@ -69,7 +71,7 @@ useEffect(()=> {
       <div className="service__columns">
         {searchTerm.trim() === '' ? (
           data.map((item) => (
-            <div className="service__column" key={item.id}>
+            <div className="service__column" key={item.nutricionistaId}>
               <div className="service__card">
                 <div className="service__card-image">
                   <img src={item.imagen} alt="" className="service-image" />
@@ -82,14 +84,14 @@ useEffect(()=> {
                       {item.objetivo?.nombre || 'Sin objetivo'}
                     </p>
                   </div>
-                  <button className="servicio__content-btn">Ver detalle</button>
+                  <Link to={`/service/detail/${item.nutricionistaId}`} className="servicio__content-btn">Ver detalle</Link>
                 </div>
               </div>
             </div>
           ))
         ) : filteredData.length > 0 ? (
           filteredData.map((item) => (
-            <div className="service__column" key={item.id}>
+            <div className="service__column" key={item.nutricionistaId}>
               <div className="service__card">
                 <div className="service__card-image">
                   <img src={item.imagen} alt="" className="service-image" />
@@ -102,7 +104,7 @@ useEffect(()=> {
                       {item.objetivo?.nombre || 'Sin objetivo'}
                     </p>
                   </div>
-                  <button className="servicio__content-btn">Ver detalle</button>
+                  <Link to={`/service/detail/${item.nutricionistaId}`} className="servicio__content-btn">Ver detalle</Link>
                 </div>
               </div>
             </div>
