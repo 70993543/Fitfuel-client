@@ -4,6 +4,9 @@ import { Home } from './pages/home/Home'
 import { Navbar } from './components/navbar/Navbar'
 import { About } from './pages/about/About'
 import {Service} from './pages/service/Service'
+import { Detail } from './pages/detail/Detail'
+
+
 
 function App() {
 
@@ -13,7 +16,9 @@ function App() {
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/about' element={<About></About>}></Route>
-        <Route path='/service' element={<Service></Service>}></Route>
+        <Route path='/service' element={<Service></Service>}
+        ></Route>
+        <Route path='/service/detail/:id' element={<Detail></Detail>}></Route>
       </Routes>
     </BrowserRouter>
   )

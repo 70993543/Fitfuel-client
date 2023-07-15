@@ -1,0 +1,112 @@
+.detalle{
+    width: 100%;
+    font-family: 'MontSerrat';
+    display: grid;
+}
+.detalle_video .detalle_youtube{
+    width: 100%;
+    height: 0;
+    border: none;
+}
+.detalle_contenido{
+    padding: 1.5rem;
+}
+.detalle_nombre{
+    text-align: center;
+    font-weight: 500;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+.detalle_wrap{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    font-family: 'Poppins';
+}
+.detalle_especialidad{
+    font-weight: 400;
+}
+.detalle_precio{
+    font-weight: 500;
+}
+.detalle_descripcion{
+    font-size: 1rem;
+    font-family: 'Poppins';
+    text-align: justify;
+}
+.detalle_redes{
+    padding: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.detalle_redes_link{
+    color: #000;
+    text-decoration: none;
+    font-size: .9rem;
+    margin-bottom: 1rem;
+    
+}
+.detalle_redes_link i{
+    margin-right: .5rem;
+    
+}
+.detalle_btn{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.detalle_btn .detalle_link{
+    background-color: rgb(37, 134, 114);
+    padding: .9rem 1.8rem;
+    color: #ffffff;
+    border-radius: 2px;
+    text-decoration: none;
+}
+
+@media(min-width: 480px){
+    .detalle_contenido{
+        padding: 2.2rem;
+    }
+    .detalle_redes{
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        justify-content: space-between;
+        place-items: center;
+    }
+    .detalle_redes_link{
+        font-size: 1rem;
+    }
+    .detalle_video .detalle_youtube{
+        height: 280px;
+    }
+    
+}
+@media(min-width: 776px){
+    .detalle_contenido{
+        padding: 4rem;
+    }
+    .detalle_video .detalle_youtube{
+        height: 350px;
+    }
+}
+@media(min-width: 996px){
+    .detalle{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .detalle_nombre{
+        font-size: 1.8rem;
+    }
+    .detalle_video{
+        padding: 2rem;
+    }
+    .detalle_video .detalle_youtube{
+        height: 300px;
+    }
+    .detalle_btn{
+        padding: 2rem;
+    }
+}
+@media(min-width: 1400px){
+    .detalle{
+        padding: 6rem;
+    }
+}
