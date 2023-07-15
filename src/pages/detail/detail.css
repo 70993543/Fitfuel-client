@@ -54,6 +54,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
+    text-align: center;
 }
 .detalle_btn .detalle_link{
     background-color: rgb(37, 134, 114);

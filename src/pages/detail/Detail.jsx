@@ -31,7 +31,9 @@ const Detail = () => {
             <h2 className='detalle_nombre'>{detalle.nombre}</h2>
             <div className='detalle_wrap'>
             <p className='detalle_especialidad'>{detalle.especialidad}</p>
-            <p className='detalle_precio'>S/{detalle.precio}</p>
+            {detalle.precio && (
+  <p className='detalle_precio'>S/{detalle.precio.precio}</p>
+)}
             
             </div>
             
