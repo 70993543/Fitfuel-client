@@ -1,0 +1,147 @@
+.appointment {
+    margin: 20px;
+    padding: 30px;
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-family: 'Montserrat';
+  }
+  
+  .appointment__title {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .appointment__form {
+    display: grid;
+    gap: 20px;
+  }
+  
+  .appointment__form-group {
+    display: grid;
+    gap: 10px;
+  }
+  
+  .appointment__label {
+    font-weight: bold;
+    color: #666;
+  }
+  
+  .appointment__input,
+  .appointment__textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .appointment__button {
+    padding: 12px 24px;
+    background-color: rgb(37, 134, 114);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .appointment__button:hover {
+    background-color: rgb(40, 134, 114);
+  }
+  .appointment__message {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #4caf50;
+    color: #fff;
+    border-radius: 4px;
+    text-align: center;
+  }
+  
+  /* Estilos responsive */
+  
+  @media (max-width: 767px) {
+    .appointment {
+      margin: 10px;
+      padding: 20px;
+    }
+  
+    .appointment__title {
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+  
+    .appointment__form {
+      gap: 15px;
+    }
+  
+    .appointment__input,
+    .appointment__textarea {
+      padding: 10px;
+      font-size: 14px;
+    }
+  
+    .appointment__button {
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+  }
+  
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .appointment {
+      margin: 15px;
+      padding: 25px;
+    }
+  
+    .appointment__title {
+      font-size: 26px;
+      margin-bottom: 15px;
+    }
+  
+    .appointment__form {
+      gap: 15px;
+    }
+  
+    .appointment__input,
+    .appointment__textarea {
+      padding: 10px;
+      font-size: 15px;
+    }
+  
+    .appointment__button {
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .appointment {
+      margin: 20px;
+      padding: 30px;
+    }
+  
+    .appointment__title {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+  
+    .appointment__form {
+      gap: 20px;
+    }
+  
+    .appointment__input,
+    .appointment__textarea {
+      padding: 12px;
+      font-size: 16px;
+    }
+  
+    .appointment__button {
+      padding: 12px 24px;
+      font-size: 18px;
+    }
+  }
+  
